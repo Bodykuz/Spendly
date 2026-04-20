@@ -1,0 +1,48 @@
+name: Spendly
+options:
+  bundleIdPrefix: com.spendly
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: pl
+
+settings:
+  base:
+    MARKETING_VERSION: 0.1.0
+    CURRENT_PROJECT_VERSION: 1
+    SWIFT_VERSION: "5.10"
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    GENERATE_INFOPLIST_FILE: NO
+    INFOPLIST_FILE: Spendly/Resources/Info.plist
+    INFOPLIST_KEY_UILaunchScreen_Generation: YES
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_PREVIEWS: YES
+
+targets:
+  Spendly:
+    type: application
+    platform: iOS
+    sources:
+      - path: Spendly
+    resources:
+      - Spendly/Resources/Assets.xcassets
+    info:
+      path: Spendly/Resources/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.spendly.app
+        API_BASE_URL: "http://localhost:8000"
+      configs:
+        Release:
+          API_BASE_URL: "https://api.spendly.app"
+    dependencies: []
+
+  SpendlyTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: SpendlyTests
+    dependencies:
+      - target: Spendly
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.spendly.app.tests

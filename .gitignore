@@ -1,0 +1,26 @@
+# ── Python / backend ──
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ── iOS / Xcode ──
+ios/Spendly/Spendly.xcodeproj/
+ios/Spendly/Spendly.xcworkspace/
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+
+# ── Misc ──
+.DS_Store
+Thumbs.db
+*.log
